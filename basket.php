@@ -24,7 +24,6 @@ include("functions.php");
     <div class="row">
         <div class="col-md-12">
             <h1 style="color: #8c9fd8; margin: 20px 0;"><i class="glyphicon glyphicon-shopping-cart" style="padding-right: 15px;"></i>Корзина</h1>
-
             <table class="table">
                 <tr>
                     <?php foreach ($productTitles as $productTitle) {

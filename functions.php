@@ -64,9 +64,6 @@ function totalSection($items, $output = '') {
 function notification($notifiers, $str='', $mores='') {
 
         static $int = 9;
-        /*echo '<pre>';
-        print_r($notifiers);
-        echo '</pre>';*/
         switch($notifiers) {
             case $notifiers[0]['quantity'] > $int :
                 $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
