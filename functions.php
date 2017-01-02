@@ -41,13 +41,7 @@ function totalSection($items, $output = '')
     $output .= '<th>Общая сумма</th>';
     $output .= '<th>Общее количество товара</th>';
     $output .= '</tr>';
-    $lasts = end($items);
-    // в этом моменте я не знаю как посчитать последний элемент скидку, точнее я не смог засунуть его в последний элемент
-    //$newArrayLasts = $lasts['price'] - $lasts['price'] * 0.3;
     foreach ($items as $item) {
-        /*echo '<pre>';
-        print_r($item);
-        echo '</pre>';*/
         if ($product['name'] = 'Детский велосипед' && $product['quantity'] >= 3) :
             $sum[] = ($item['price'] - $item['price'] * 0.3) * $item['quantity'];
         else :
@@ -69,17 +63,17 @@ function notification($notifiers, $str = '', $mores = '')
         case $notifiers[0]['quantity'] > $int :
             $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
             $str .= '<h3><i class="glyphicon glyphicon-info-sign" style="font-size: 25px; padding: 15px;"></i>Уведомление</h3>';
-            $str .= "<p>Количество заказываемых товаров " . $notifiers[0]['name'] . " превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
+            $str .= "<p>Количество заказываемых товаров " . $notifiers[0]['name'] . " превышающее ". $notifiers[2]['quantity'] ." и более не может быть оформлено, так как на скаладе максимальное количество товаров ". $notifiers[0]['ostatok'] ."</p>";
             break;
         case $notifiers[1]['quantity'] > $int :
             $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
             $str .= '<h3><i class="glyphicon glyphicon-info-sign" style="font-size: 25px; padding: 15px;"></i>Уведомление</h3>';
-            $str .= "<p>Количество заказываемых товаров " . $notifiers[1]['name'] . " превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
+            $str .= "<p>Количество заказываемых товаров " . $notifiers[1]['name'] . " превышающее ". $notifiers[2]['quantity'] ." и более не может быть оформлено, так как на скаладе максимальное количество товаров ". $notifiers[1]['ostatok'] ."</p>";
             break;
         case $notifiers[2]['quantity'] > $int :
             $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
             $str .= '<h3><i class="glyphicon glyphicon-info-sign" style="font-size: 25px; padding: 15px;"></i>Уведомление</h3>';
-            $str .= "<p>Количество заказываемых товаров " . $notifiers[2]['name'] . " превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
+            $str .= "<p>Количество заказываемых товаров " . $notifiers[2]['name'] . " превышающее ". $notifiers[2]['quantity'] ." и более не может быть оформлено, так как на скаладе максимальное количество товаров ". $notifiers[2]['ostatok'] ."</p>";
             break;
         default:
             $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';

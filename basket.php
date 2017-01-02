@@ -39,10 +39,10 @@ include("functions.php");
                         <td><?= $product['quantity'] . ' шт'; ?></td>
                         <td><?= $product['ostatok'] . ' шт'; ?></td>
                         <?php if ($product['name'] = 'Детский велосипед' && $product['quantity'] >= 3) : ?>
-                            <td><?= '3 %'; ?></td>
+                            <td><?= '30 %'; ?></td>
                             <td><?= ($product['price'] - $product['price'] * 0.3) * $product['quantity'] . '$' ?></td>
                         <?php else: ?>
-                            <td><?= $product['sale'] . ' %'; ?></td>
+                            <td><?= $product['sale'] * 10 . ' %'; ?></td>
                             <td><?= ($product['price'] - $product['price'] * $product['sale'] / 100) * $product['quantity'] . '$' ?></td>
                         <?php endif; ?>
                     </tr>
