@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c75932b-5ac8-48b2-a8cc-733ff8f7752e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/basket.php" afterPath="$PROJECT_DIR$/basket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-    </list>
+    <list default="true" id="9c75932b-5ac8-48b2-a8cc-733ff8f7752e" name="Default" comment="" />
     <ignored path="lesson.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -33,36 +29,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="basket.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/basket.php">
+      <file leaf-file-name="get.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="32" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="7" />
+            <state relative-caret-position="630">
+              <caret line="50" column="4" lean-forward="true" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="37" />
               <folding>
-                <element signature="e#6#89#0#PHP" expanded="false" />
+                <marker date="1483376914323" expanded="true" signature="795:838" ph="..." />
+                <marker date="1483376914323" expanded="true" signature="1153:1214" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions.php">
+      <file leaf-file-name="post.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="77" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state relative-caret-position="514">
+              <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
               <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-                <marker date="1483363230689" expanded="true" signature="961:1025" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="2020:2101" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="2179:2210" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="2604:2685" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="2763:2794" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="3188:3269" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="3347:3378" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="3741:3822" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="3900:3931" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="4237:4318" ph="..." />
-                <marker date="1483363230689" expanded="true" signature="4381:4412" ph="..." />
+                <marker date="1483380247019" expanded="true" signature="794:837" ph="..." />
+                <marker date="1483380247019" expanded="true" signature="1152:1213" ph="..." />
               </folding>
             </state>
           </provider>
@@ -85,6 +72,8 @@
         <option value="$PROJECT_DIR$/ip.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/basket.php" />
+        <option value="$PROJECT_DIR$/get.php" />
+        <option value="$PROJECT_DIR$/post.php" />
       </list>
     </option>
   </component>
@@ -218,12 +207,12 @@
       <workItem from="1483257397402" duration="777000" />
       <workItem from="1483260420041" duration="270000" />
       <workItem from="1483260718941" duration="26259000" />
-      <workItem from="1483340467654" duration="12540000" />
+      <workItem from="1483340467654" duration="23202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45843000" />
+    <option name="totallyTimeSpent" value="56505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,10 +346,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/basket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="32" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="7" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="77" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state relative-caret-position="1015">
+          <caret line="71" column="18" lean-forward="true" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <marker date="1483363230689" expanded="true" signature="961:1025" ph="..." />
@@ -378,12 +377,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basket.php">
+    <entry file="file://$PROJECT_DIR$/get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="32" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="7" />
+        <state relative-caret-position="630">
+          <caret line="50" column="4" lean-forward="true" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="37" />
           <folding>
-            <element signature="e#6#89#0#PHP" expanded="false" />
+            <marker date="1483376914323" expanded="true" signature="795:838" ph="..." />
+            <marker date="1483376914323" expanded="true" signature="1153:1214" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+          <folding>
+            <marker date="1483380247019" expanded="true" signature="794:837" ph="..." />
+            <marker date="1483380247019" expanded="true" signature="1152:1213" ph="..." />
           </folding>
         </state>
       </provider>
