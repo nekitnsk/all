@@ -23,7 +23,8 @@ include("functions.php");
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 style="color: #8c9fd8; margin: 20px 0;"><i class="glyphicon glyphicon-shopping-cart" style="padding-right: 15px;"></i>Корзина</h1>
+            <h1 style="color: #8c9fd8; margin: 20px 0;"><i class="glyphicon glyphicon-shopping-cart"
+                                                           style="padding-right: 15px;"></i>Корзина</h1>
             <table class="table">
                 <tr>
                     <?php foreach ($productTitles as $productTitle) {
@@ -31,20 +32,21 @@ include("functions.php");
                     } ?>
                 </tr>
                 <?php foreach ($products as $product) : ?>
-                <tr>
-                    <td><i class="glyphicon glyphicon-th-list" style="padding-right: 10px"></i><?= $product['name']; ?></td>
-                    <td><?= $product['price'] . '$'; ?></td>
-                    <td><?= $product['quantity'] . ' шт'; ?></td>
-                    <td><?= $product['ostatok'] . ' шт'; ?></td>
-                    <?php if($product['name'] = 'Детский велосипед' && $product['quantity'] >= 3) : ?>
-                        <td><?= '3 %'; ?></td>
-                        <td><?= ($product['price'] - $product['price'] * 0.3 ) * $product['quantity'] . '$' ?></td>
-                    <?php else: ?>
-                        <td><?= $product['sale'] . ' %'; ?></td>
-                        <td><?= ($product['price'] - $product['price'] * $product['sale'] / 100) * $product['quantity'] . '$' ?></td>
-                    <?php endif; ?>
-                </tr>
-               <?php endforeach; ?>
+                    <tr>
+                        <td><i class="glyphicon glyphicon-th-list"
+                               style="padding-right: 10px"></i><?= $product['name']; ?></td>
+                        <td><?= $product['price'] . '$'; ?></td>
+                        <td><?= $product['quantity'] . ' шт'; ?></td>
+                        <td><?= $product['ostatok'] . ' шт'; ?></td>
+                        <?php if ($product['name'] = 'Детский велосипед' && $product['quantity'] >= 3) : ?>
+                            <td><?= '3 %'; ?></td>
+                            <td><?= ($product['price'] - $product['price'] * 0.3) * $product['quantity'] . '$' ?></td>
+                        <?php else: ?>
+                            <td><?= $product['sale'] . ' %'; ?></td>
+                            <td><?= ($product['price'] - $product['price'] * $product['sale'] / 100) * $product['quantity'] . '$' ?></td>
+                        <?php endif; ?>
+                    </tr>
+                <?php endforeach; ?>
             </table>
         </div>
         <?= totalSection($products); ?>
@@ -52,7 +54,5 @@ include("functions.php");
         <?= discount($products); ?>
     </div>
 </div>
-
-
 </body>
 </html>
