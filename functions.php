@@ -30,11 +30,11 @@ $products = array(
         'sale' => mt_rand(0, 3)
     ),
 );
-$productTitles = array('Наименование товара', 'Цена', 'Количество заказа', 'Остаток на складе', 'Скидка');
+$productTitles = array('Наименование товара', 'Цена', 'Количество заказа', 'Остаток на складе', 'Скидка', 'Цена после скидки');
 
 function totalSection($items, $output = '') {
     $output .= '<div class="col-md-12" style="background: #e5efff; border: 1px solid #bbb; border-radius: 5px;">';
-    $output .= '<h3>Итого</h3>';
+    $output .= '<h3>Итого:</h3>';
     $output .= '<table class="table">';
     $output .= '<tr>';
     $output .= '<th>Общая сумма</th>';
@@ -44,7 +44,14 @@ function totalSection($items, $output = '') {
     // в этом моменте я не знаю как посчитать последний элемент скидку, точнее я не смог засунуть его в последний элемент
     //$newArrayLasts = $lasts['price'] - $lasts['price'] * 0.3;
     foreach ($items as $item) {
-        $sum[] =  ($item['price'] - $item['price'] * $item['sale'] / 100) * $item['quantity'];
+        /*echo '<pre>';
+        print_r($item);
+        echo '</pre>';*/
+        if($product['name'] = 'Детский велосипед' && $product['quantity'] >= 3) :
+            $sum[] =  ($item['price'] - $item['price'] * 0.3) * $item['quantity'];
+        else :
+            $sum[] =  ($item['price'] - $item['price'] * $item['sale'] / 100) * $item['quantity'];
+        endif;
         $sumQuantity[] = $item['quantity'];
     }
     $output .=  '<td>'. array_sum($sum) . '$' .'</td>';
@@ -55,30 +62,46 @@ function totalSection($items, $output = '') {
 }
 
 function notification($notifiers, $str='', $mores='') {
-    foreach ($notifiers as $notifier) {
-        $results = array_unique($notifier);
-        static $int = 8;
-        if($results['quantity'] > $int) {
-            $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
-            $str .= '<h3>Уведомление</h3>';
-            $str .= "<p>Количество заказываемых товаров превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
+
+        static $int = 9;
+        /*echo '<pre>';
+        print_r($notifiers);
+        echo '</pre>';*/
+        switch($notifiers) {
+            case $notifiers[0]['quantity'] > $int :
+                $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
+                $str .= '<h3><i class="glyphicon glyphicon-info-sign" style="font-size: 25px; padding: 15px;"></i>Уведомление</h3>';
+                $str .= "<p>Количество заказываемых товаров " . $notifiers[0]['name'] . " превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
+                break;
+            case $notifiers[1]['quantity'] > $int :
+                $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
+                $str .= '<h3><i class="glyphicon glyphicon-info-sign" style="font-size: 25px; padding: 15px;"></i>Уведомление</h3>';
+                $str .= "<p>Количество заказываемых товаров " . $notifiers[1]['name'] . " превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
+                break;
+            case $notifiers[2]['quantity'] > $int :
+                $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
+                $str .= '<h3><i class="glyphicon glyphicon-info-sign" style="font-size: 25px; padding: 15px;"></i>Уведомление</h3>';
+                $str .= "<p>Количество заказываемых товаров " . $notifiers[2]['name'] . " превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
+                break;
+            default:
+                $str .= '<div class="col-md-12" style="background: #ffe5e5; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
+                $str .= '<h3><i class="glyphicon glyphicon-info-sign" style="font-size: 25px; padding: 15px;"></i>Уведомление</h3>';
+                $str .= "<p>Количество заказываемых товаров превышающее 10шт и более не может быть оформлено, так как на скаладе максимальное количество товаров 10шт</p>";
         }
-        $int++;
-    }
     $mores .= $str;
     $mores .= '</div>';
     return $mores;
 }
 
 $sales .= '<div class="col-md-12" style="background: #c9ffcc; border: 1px solid #bbb; border-radius: 5px; margin-top: 30px">';
-$sales .= '<h3>Скидка</h3>';
-$sales .= '<p>Вы заказали '. $discounts[2]['name'] .' 3 шт либо более вам начислена скидка на эту позицию в размере 30%'.'</p>';
+$sales .= '<h3><i class="glyphicon glyphicon-gift" style="font-size: 25px; padding: 15px;"></i>Скидка</h3>';
+$sales .= '<p>Вы заказали '. $products[2]['name'] .' 3 шт либо более вам начислена скидка на эту позицию в размере 30%'.'</p>';
 $sales .= '</div>';
 
 function discount($discounts) {
     if($discounts[2]['quantity'] >= 3) {
         global $sales;
-        return $sales;
     }
+    return $sales;
 }
 

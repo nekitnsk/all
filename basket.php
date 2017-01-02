@@ -14,7 +14,7 @@ include("functions.php");
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Корзина</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -23,7 +23,7 @@ include("functions.php");
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 style="color: #8c9fd8;">Корзина</h1>
+            <h1 style="color: #8c9fd8; margin: 20px 0;"><i class="glyphicon glyphicon-shopping-cart" style="padding-right: 15px;"></i>Корзина</h1>
 
             <table class="table">
                 <tr>
@@ -31,32 +31,21 @@ include("functions.php");
                         echo '<th>' . $productTitle . '</th>';
                     } ?>
                 </tr>
-
+                <?php foreach ($products as $product) : ?>
                 <tr>
-                    <td><?= $products[0]['name']; ?></td>
-                    <td><?= $products[0]['price'] . '$'; ?></td>
-                    <td><?= $products[0]['quantity'] . ' шт'; ?></td>
-                    <td><?= $products[0]['ostatok'] . ' шт'; ?></td>
-                    <td><?= $products[0]['sale'] . ' %'; ?></td>
-                </tr>
-                <tr>
-                    <td><?= $products[1]['name']; ?></td>
-                    <td><?= $products[1]['price'] . '$'; ?></td>
-                    <td><?= $products[1]['quantity'] . ' шт'; ?></td>
-                    <td><?= $products[1]['ostatok'] . ' шт'; ?></td>
-                    <td><?= $products[0]['sale'] . ' %'; ?></td>
-                </tr>
-                <tr>
-                    <td><?= $products[2]['name']; ?></td>
-                    <?php if($products[2]['quantity'] >= 3) : ?>
-                        <td><?= $products[2]['price'] - $products[2]['price'] * 0.3 . '$'; ?></td>
-                    <?php else : ?>
-                        <td><?= $products[2]['price'] . '$'; ?></td>
+                    <td><i class="glyphicon glyphicon-th-list" style="padding-right: 10px"></i><?= $product['name']; ?></td>
+                    <td><?= $product['price'] . '$'; ?></td>
+                    <td><?= $product['quantity'] . ' шт'; ?></td>
+                    <td><?= $product['ostatok'] . ' шт'; ?></td>
+                    <?php if($product['name'] = 'Детский велосипед' && $product['quantity'] >= 3) : ?>
+                        <td><?= '3 %'; ?></td>
+                        <td><?= ($product['price'] - $product['price'] * 0.3 ) * $product['quantity'] . '$' ?></td>
+                    <?php else: ?>
+                        <td><?= $product['sale'] . ' %'; ?></td>
+                        <td><?= ($product['price'] - $product['price'] * $product['sale'] / 100) * $product['quantity'] . '$' ?></td>
                     <?php endif; ?>
-                    <td><?= $products[2]['quantity'] . ' шт'; ?></td>
-                    <td><?= $products[2]['ostatok'] . ' шт'; ?></td>
-                    <td><?= $products[0]['sale'] . ' %'; ?></td>
                 </tr>
+               <?php endforeach; ?>
             </table>
         </div>
         <?= totalSection($products); ?>
